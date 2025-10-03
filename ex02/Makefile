@@ -6,9 +6,11 @@
 #    By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 15:52:18 by aboumall          #+#    #+#              #
-#    Updated: 2025/07/10 03:20:44 by aboumall         ###   ########.fr        #
+#    Updated: 2025/10/03 03:11:28 by aboumall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+HEADERS = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 TARGET = animals
 
