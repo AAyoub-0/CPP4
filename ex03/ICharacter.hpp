@@ -6,15 +6,17 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 03:32:54 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/03 03:34:24 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/10/04 18:40:51 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-#include <iostream>
 #include "AMateria.hpp"
+#include <iostream>
+
+class AMateria;
 
 class ICharacter
 {

@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 03:27:27 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/04 18:34:05 by aboumall         ###   ########.fr       */
+/*   Created: 2025/10/04 18:16:35 by aboumall          #+#    #+#             */
+/*   Updated: 2025/10/04 18:16:48 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 #define nullptr 0
 
-class Character : public ICharacter
+class MateriaSource : public IMateriaSource
 {
 	private:
-		std::string _name;
 		AMateria*	_inventory[4];
 	public:
-		virtual ~Character();
-		Character();
-		Character(const std::string name);
-		Character(const Character &other);
-		
-		Character &operator=(const Character &other);
-		
-		std::string const & getName() const;
-		void		equip(AMateria* m);
-		void		unequip(int idx);
-		void		use(int idx, ICharacter &target);
+		MateriaSource();
+		MateriaSource(const MateriaSource& other);
+		MateriaSource& operator=(const MateriaSource& other);
+		virtual ~MateriaSource();
+
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif
