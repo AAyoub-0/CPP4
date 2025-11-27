@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 02:51:23 by aboumall          #+#    #+#             */
-/*   Updated: 2025/07/10 03:14:11 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:12:31 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cat::Cat() {
 	_brain = new Brain();
 	std::cout << "Cat default constructor called" << std::endl;
 }
-Cat::Cat(const Cat &other) : Animal(other) {
+Cat::Cat(const Cat &other) : Animal(other), _brain(NULL) {
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 Cat::~Cat() {

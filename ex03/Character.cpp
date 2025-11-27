@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 03:42:32 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/04 18:53:00 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:19:19 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,11 @@ std::string const & Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
-	if (!m) {
+	if (!m)
 		return;
-	}
+	for (int i = 0; i < 4; i++)
+		if (m == _inventory[i])
+			return ;
 	for (int i = 0; i < 4; i++) {
 		if (!_inventory[i]) {
 			_inventory[i] = m;
@@ -88,9 +90,8 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx < 0 || idx >= 4) {
+	if (idx < 0 || idx >= 4) 
 		return;
-	}
 	if (_inventory[idx]) {
 		std::cout << _name << " unequipped " << _inventory[idx]->getType() << " materia from slot " << idx << "." << std::endl;
 		_inventory[idx] = nullptr;
@@ -98,9 +99,8 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter &target) {
-	if (idx < 0 || idx >= 4) {
+	if (idx < 0 || idx >= 4)
 		return;
-	}
 	if (_inventory[idx]) {
 		std::cout << _name << " uses " << _inventory[idx]->getType() << " materia on " << target.getName() << "." << std::endl;
 		_inventory[idx]->use(target);

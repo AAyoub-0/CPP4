@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:16:13 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/04 18:48:19 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:18:17 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ MateriaSource::~MateriaSource() {
 void MateriaSource::learnMateria(AMateria* m) {
 	if (!m)
 		return;
+	for (int i = 0; i < 4; i++)
+		if (m == _inventory[i])
+			return ;
 	for (int i = 0; i < 4; i++) {
 		if (!_inventory[i]) {
 			_inventory[i] = m;
