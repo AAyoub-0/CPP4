@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 03:27:27 by aboumall          #+#    #+#             */
-/*   Updated: 2025/11/28 14:01:00 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:13:45 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Character : public ICharacter
 		Character();
 		Character(const std::string name);
 		Character(const Character &other);
-		virtual ~Character();
+		~Character();
 		
 		Character &operator=(const Character &other);
 		
