@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:16:35 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/04 18:16:48 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:02:07 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& other);
-		MateriaSource& operator=(const MateriaSource& other);
 		virtual ~MateriaSource();
+
+		MateriaSource& operator=(const MateriaSource& other);
 
 		virtual void learnMateria(AMateria*);
 		virtual AMateria* createMateria(std::string const & type);

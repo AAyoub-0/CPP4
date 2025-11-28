@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 03:17:10 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/04 18:40:43 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:01:09 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class AMateria
 		std::string _type;
 	public:
 		AMateria();
-		virtual ~AMateria();
 		AMateria(const AMateria& other);
 		AMateria(std::string const & type);
+		virtual ~AMateria();
+		
 		AMateria& operator=(const AMateria& other);
 
 		std::string const & getType() const;
