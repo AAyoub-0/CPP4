@@ -6,11 +6,11 @@
 #    By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 15:52:18 by aboumall          #+#    #+#              #
-#    Updated: 2025/10/03 03:11:01 by aboumall         ###   ########.fr        #
+#    Updated: 2025/11/28 12:28:47 by aboumall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADERS = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
+HEADERS = Animal.hpp Cat.hpp Dog.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 
 TARGET = animals
 
@@ -18,21 +18,22 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Animal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp
+SRC = Animal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(TARGET)
 
-$(TARGET): $(OBJ)
+$(TARGET): $(OBJ) $(HEADERS)
 	$(CXX) $(OBJ) -o $(TARGET)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJ)
 
 fclean: clean
+	rm -f $(TARGET)
 
 re: fclean all
 

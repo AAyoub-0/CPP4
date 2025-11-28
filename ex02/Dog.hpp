@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 02:53:10 by aboumall          #+#    #+#             */
-/*   Updated: 2025/07/10 03:14:51 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:24:22 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Dog : public Animal
 		Dog &operator=(const Dog &other);
 		
 		void makeSound() const;
+
+		Brain *getBrain() const;
 };
 
 #endif

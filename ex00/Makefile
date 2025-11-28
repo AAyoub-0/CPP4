@@ -6,7 +6,7 @@
 #    By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/13 15:52:18 by aboumall          #+#    #+#              #
-#    Updated: 2025/10/03 03:11:05 by aboumall         ###   ########.fr        #
+#    Updated: 2025/11/28 12:21:03 by aboumall         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,16 +23,17 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(TARGET)
 
-$(TARGET): $(OBJ)
+$(TARGET): $(OBJ) $(HEADERS)
 	$(CXX) $(OBJ) -o $(TARGET)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJ)
 
 fclean: clean
+	rm -f $(TARGET)
 
 re: fclean all
 

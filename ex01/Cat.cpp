@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 02:51:23 by aboumall          #+#    #+#             */
-/*   Updated: 2025/07/10 03:14:11 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:27:41 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Cat::Cat() {
 }
 Cat::Cat(const Cat &other) : Animal(other) {
 	std::cout << "Cat copy constructor called" << std::endl;
+	_brain = new Brain(*other._brain);
 }
 Cat::~Cat() {
 	delete _brain;
@@ -38,4 +39,8 @@ Cat &Cat::operator=(const Cat &other) {
 
 void Cat::makeSound() const {
 	std::cout << "MEOW MEOW MEOW" << std::endl;
+}
+
+Brain *Cat::getBrain() const {
+	return _brain;
 }

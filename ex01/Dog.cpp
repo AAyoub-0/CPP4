@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 02:53:25 by aboumall          #+#    #+#             */
-/*   Updated: 2025/07/10 03:15:13 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:28:11 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Dog::Dog() {
 }
 Dog::Dog(const Dog &other) : Animal(other) {
 	std::cout << "Dog copy constructor called" << std::endl;
+	_brain = new Brain(*other._brain);
 }
 Dog::~Dog() {
 	delete _brain;
@@ -38,4 +39,8 @@ Dog &Dog::operator=(const Dog &other) {
 
 void Dog::makeSound() const {
 	std::cout << "waff waf" << std::endl;
+}
+
+Brain *Dog::getBrain() const {
+	return _brain;
 }
