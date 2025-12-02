@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 03:17:10 by aboumall          #+#    #+#             */
-/*   Updated: 2025/11/28 14:01:09 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:26:01 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ class AMateria
 		AMateria(const AMateria& other);
 		AMateria(std::string const & type);
 		virtual ~AMateria();
-		
+
 		AMateria& operator=(const AMateria& other);
 
-		std::string const & getType() const;
+		virtual std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
