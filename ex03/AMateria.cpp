@@ -6,7 +6,7 @@
 /*   By: aboumall <aboumall42@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 03:19:52 by aboumall          #+#    #+#             */
-/*   Updated: 2025/10/04 18:46:05 by aboumall         ###   ########.fr       */
+/*   Updated: 2025/12/17 15:27:34 by aboumall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ AMateria::AMateria(const AMateria& other) : _type(other._type) {
 	#endif
 }
 
+AMateria::AMateria() : _type("fist") {
+	#if DEBUG
+	std::cout << "AMateria default constructor called" << std::endl;
+	#endif
+}
+
 AMateria& AMateria::operator=(const AMateria& other) {
 	if (this != &other) {
 		this->_type = other._type;
 	}
 	return *this;
-}
-
-AMateria::AMateria() : _type("fist") {
-	#if DEBUG
-	std::cout << "AMateria default constructor called" << std::endl;
-	#endif
 }
 
 AMateria::~AMateria() {
